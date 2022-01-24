@@ -7,6 +7,7 @@
 * Optionally get a Markdown editor for editing Markdown plain-text markup files (most code editors support this at some level).
 * Install the Git command-line tools (or see if your platform has them already installed).
 * Optionally install a Git GUI.
+* **Important:** Set up an account on GitHub.com if you don't already have one.
 
 
 

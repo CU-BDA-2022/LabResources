@@ -1,5 +1,7 @@
 # Python
 
+Hello! I've changed!
+
 [**Warning:** At the moment this document is somewhat preliminary. Parts have been updated, but we are still checking some of the links. This paragraph will be removed when the links are verified. *Do not yet follow these directions.*]
 
 We will make heavy use of the Python high-level computing language, specifically the CPython-3.7 implementation (usually just called Python-3.7; the "C" indicates it's implemented in the C language). We will also use many Python packages that are not part of Python itself, particularly the collection of packages known colloquially as the **PyData stack** (e.g., packages providing fast numerical computing capability, plotting, and of course statistical computing tools; see [python - The PyData Ecosystem - Stack Overflow](https://stackoverflow.com/questions/18168400/the-pydata-ecosystem) for a list).

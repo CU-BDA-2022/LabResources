@@ -15,7 +15,7 @@ You can install a new version of Python by itself, and install and maintain the 
 ## Anaconda Python distribution
 
 We strongly recommend that all BDA students use the **Anaconda Python distribution** (the Python-3.9 version), a distribution *specifically curated to support data science*.
-It is free (though there is a commercial version), contains most of the software we need, and provides package management and virtual environment capabilities not readily available otherwise, via the included **`conda` package management system**. It supplies compiled binary libraries built with optimized compilers that you may not have easy access to.  It is also very widely used across the data science community (academic and commercial).
+It is free (though there is a commercial version), contains most of the software we need, and provides package management and *virtual environment* capabilities not readily available otherwise, via the included **`conda` package management system**. It supplies compiled binary libraries built with optimized compilers that you may not have easy access to.  It is also very widely used across the data science community (academic and commercial).
 
 We will help with installation and operation issues only for Anaconda Python. It requires a few GB of disk space for a new installation. It may take a while to download and install everything; budget time for this appropriately.
 
@@ -23,18 +23,12 @@ The [Anaconda Individual Distribution main page](https://www.anaconda.com/produc
 
 To set up Anaconda for STSCI 4780/5780, follow the flowchart below. You will have to execute **at most one** of the operations in a blue box. You will have to do **all** of the operations in the green boxes. Details for each operation are provided below.  **Don't execute them all**; rather, follow the flowchart, using the instructions below as needed. (The reason for the various options is to make sure that the Anaconda setup for this class doesn't interfere with any other Python distribution you may need for other work.)
 
-*Note:* During parts of the installation or environment definition process, you may see instructions displayed about setting up `dbus`. This is a Linux application communication tool that we won't be using, so you may safely ignore these instructions.
+*Note:* During parts of the installation or environment creation process, you may see instructions displayed about setting up `dbus`. This is a Linux application communication tool that we won't be using, so you may safely ignore these instructions.
 
 
 ### Anaconda installation flowchart
 
 ![Anaconda installation flowchart](./AnacondaInstallationFlowchart.png)
-
-### Install Anaconda with Python 3
-
-Visit [Downloads | Anaconda](https://www.anaconda.com/download/) to download an installer for your platform. Select the Python-3.9 version. Follow the instructions for your platform, linked here: [Installation — conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). *Ignore the Miniconda option*; you should install the full Anaconda distribution if the flowchart led you here. As noted in the instructions, if you are asked about settings you aren't sure about, just accept the defaults.
-
-Just follow the first part of those instructions. You may stop when you reach "silent mode" instructions (don't follow those instructions).
 
 ### Install Miniconda with Python 3
 
@@ -48,8 +42,11 @@ Miniconda  installs a subset of the full Anaconda distribution, so as not to int
 
 If you've already installed the full Anaconda package, that will not be a problem; the instructions below will have you set up an environment for the course that will work identically to an environment based on Miniconda. The Miniconda approach is just a bit more efficient, and it will help make sure that you don't inadvertently work on your assignments in an incorrect environment (since Miniconda's default environment will not be able to run your course code).
 
+**Install Miniconda** as follows:
+
 * Visit the [Regular installation documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#regular-installation), follow the link for your platform, and get the Miniconda installer appropriate for your computer. E.g., for Windows you'll have to choose between 32-bit and 64-bit; for macOS choose the "64-bit pkg" version (use this even if you have an M1 Mac; the M1 version does not yet support Python-3.9).
 * Follow the remaining instructions. Windows users will launch a standard `.exe` installer, and Mac users will launch a standard `.pkg` installer. Linux users will have to run a command-line command to do the installation.
+* You may see requests for disk access permissions; this is needed to install the distribution (almost all of it gets installed in a new folder in your user account). If you are a regular terminal/command line user who has customizations in shell profile files, you may see a request to alter your profile; accept it (unless you're an expert and plan to handle command path management yourself). 
 
 **Windows users:** Anaconda/Miniconda installs a Windows program called `Anaconda Prompt` (available in the Start Menu), similar to how the Windows Git installers install `Git Bash`. If you launch `Anaconda Prompt`, you'll get a console/terminal window all set up for accessing Anaconda. (For Linux and macOS users, any terminal session will have access.)
 
@@ -65,7 +62,7 @@ _**ALL USERS**_ should update the `conda` system, even if you have previously in
 To update `conda`:
 
 * Open up a terminal (e.g., the Windows Anaconda Prompt, macOS Terminal, or a Linux xterm).
-* Simply run `conda update conda`.  Accept any changes it offers to make.
+* Simply run `conda update conda`.  Accept any downloads or other changes it offers to make.
 
 
 ### Create the bda22 environment
@@ -78,7 +75,9 @@ In a terminal session (you need not be in any specific location), enter this com
 conda create -n bda22 python=3.9 anaconda
 ```
 
-This creates an environment named `bda22` that has access to the full Anaconda distribution using Python-3.9.  Later, we'll be adding other packages to this environment.  By working in an environment, we can make sure that any changes we make to our Python installation don't impact any other Python work you may do.
+Again, accept any downloads or other changes conda asks you to agree to. You may see a message about installing a package to accelerate `scikit-learn`; you may ignore that.
+
+This process creates an environment named `bda22` that has access to the full Anaconda distribution using Python-3.9.  Later, we'll be adding other packages to this environment.  By working in an environment, we can make sure that any changes we make to our Python installation don't impact any other Python work you may do.
 
 _**NOTE THE FOLLOWING:**_ You will need to activate the `bda22` environment every time you do work for the course (including when you launch Jupyter notebooks). So memorize the instructions below (but don't execute them right now).
 

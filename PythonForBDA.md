@@ -79,7 +79,7 @@ Again, accept any downloads or other changes conda asks you to agree to. You may
 
 This process creates an environment named `bda22` that has access to the full Anaconda distribution using Python-3.9.  Later, we'll be adding other packages to this environment.  By working in an environment, we can make sure that any changes we make to our Python installation don't impact any other Python work you may do.
 
-_**NOTE THE FOLLOWING:**_ You will need to activate the `bda22` environment every time you do work for the course (including when you launch Jupyter notebooks). So memorize the instructions below (but don't execute them right now).
+_**NOTE THE FOLLOWING:**_ You will need to activate the `bda22` environment every time you do work for the course (including when you launch Jupyter notebooks). So memorize the instructions below (but don't execute them right now). Command line experts may wish to create short *aliases* for these commands.
 
 FYI: Activation runs a shell script that changes environment variables in the current shell that tell the shell where to find commands and other resources.  This will sometimes display a lot of environment variable values on your terminal; this is fine (as long as there are no errors).
 

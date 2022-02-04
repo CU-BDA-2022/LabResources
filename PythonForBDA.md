@@ -34,7 +34,7 @@ To set up Anaconda for STSCI 4780/5780, follow the flowchart below. You will hav
 
 The many components comprising Anaconda may be installed in two different ways:
 
-* Installing Anaconda directly, which will give you a large default Python installation immediately accessible on the command line. This is a good choice for users who plan to work with Python on a single project.
+* Installing Anaconda directly, which will give you a large default Python installation immediately accessible on the command line, and the `conda` package manager. This is a good choice for users who plan to work with Python on a single project.
 
 * Installing **Miniconda**, a streamlined version that provides immediate access only to a basic Python distribution, and the `conda` package manager. This is a good choice for users who plan to create one or more **coda environments** that isolate a collection of Python packages for use on a particular project (or set of related projects, e.g., your course assignments). This is the approach we recommend. 
 

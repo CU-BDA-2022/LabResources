@@ -12,6 +12,12 @@ Please see the separate [**Basic developer tools**](BasicDeveloperTools.md) Mark
 
 
 
+## GitHub authorization
+
+For `git` actions that modify your assignment repo on GitHub (e.g., `git push`), GitHub will require you to authorize the action with your GitHub credentials. `git` will ask for a username and password. In 2021, GitHub began requiring users to authorize such actions using **personal access tokens** rather than their account passwords. If you find the credentials you enter don't work, you probably need to generate a new token. See [**GitHub Personal Access Tokens**](GitHubPATs.md) for more information.
+
+
+
 ## Anaconda environment
 
 The main computing environment we'll use for labs and assignments will by Python with various scientific computing packages from the PyData ecosystem, and (later in the course) the PyStan package providing access to the Stan probabilistic computing language.
@@ -21,6 +27,10 @@ We will use Anaconda Python 3 for assignments. If you are a Python expert, and b
 An important virtue of Anaconda Python is the `conda` command that it installs. `conda` is a package manager that maintains *conda environments* comprising Python packages and (importantly!) other software packages and libraries, ensuring they interact properly, and isolating them from other versions that may be on your system. So if you have another version of Python already on your system, you should be able to install the course's environment without creating conflicts with other software.
 
 See the [**PythonForBDA**](PythonForBDA.md) document (in this repo) for instructions on how to install the BDA `conda` environment; it includes a flowchart to guide you through the process.
+
+
+
+
 
 ## Assignment submission
 

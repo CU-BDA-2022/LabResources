@@ -9,7 +9,7 @@ For `git` actions that modify your assignment repo on GitHub (e.g., `git push`),
   * Set an expiration date after the end of the course (e.g., in July).
   * For scope/permissions, make sure to select **repo** (which will select all the options in the repo group). You may select other options as you see fit, e.g., if you want to create a token that you'll use for other activities besides maintaining your BDA repo.
   * Generate the token. GitHub will display the token, a long, random-looking string.
-* **Copy the token, and treat it just like you'd treat any other password.** Keep it secure, and keep it secret.
+* **Copy the token, and treat it just like you'd treat an important password.** Keep it secure, and keep it secret.
   * If you use a password manager, use it to store your PAT just like you'd store any other password (use your GitHub username as the username associated with the PAT).
   * If you don't use a password manager, consider investing time in setting one up. Cornell provides free LastPass enterprise accounts to students: [Secure Password Management | IT@Cornell](https://it.cornell.edu/password-mgmt). 
 
@@ -21,7 +21,7 @@ In computing, a *token* is "an object (in software or in hardware) which represe
 
 A GitHub personal access token is essentially a kind of supplemental password associated with a GitHub user's account. 
 
-An account's main password has the following properties:
+An account's *main password* has the following properties:
 * It is unique (there is only one associated with an account).
 * It grants full access to everything associated with the account.
 * If changed, it must be updated everywhere the account is accessed by password.

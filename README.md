@@ -44,8 +44,17 @@ Please follow these instructions to work on your assignment solutions and submit
    * Open a terminal session with the assignment folder in your repo as the working directory.
    * Activate the `bda22` conda environment.
    * Launch the Jupyter notebook server with the command: `jupyter noteboook`. This should open a tab in your default web browser with the Jupyter notebook interface, displaying content in your local assignment folder.
-   * Edit the `SolutionsXX.ipynb` notebook with your solutions in new cells created below each problem.  Feel free to add and commit intermediate stages of your work as often as you like, and to push intermediate stages back to GitHub if you wish.
+   * Edit the `SolutionsXX.ipynb` notebook with your solutions in **new cells created below each problem**.  Feel free to add and commit intermediate stages of your work as often as you like, and to push intermediate stages back to GitHub if you wish.
 
 4. When you are done working on the assignment, be sure to add and commit your final solutions (and any other resources you may have had to edit or create) in your local repo.
 5. Push your repo back to the course org using: `git push`
 6. Visit the [course org on GitHub](https://github.com/CU-BDA-2020) to make sure your content was pushed. Check to see when the content in the relevant assignment folder in your repo was last updated; the time stamp should verify that you just pushed the content. Note that GitHub will attempt to render Jupyter notebooks you upload. It does this imperfectly. Don't be concerned about visual anomalies as seen on GitHub. For grading, we pull your content to our computers and run your notebooks in real Jupyter sessions.
+
+Part of our grading process is automated, using a custom Python package that requires your assignment notebooks to be in a particular format. **You must follow the instructions carefully**. In particular:
+
+* Put your work in **new cells created below each problem description cell**.
+* **Never, ever** edit content in a problem description cell. Do not put any of your work in a problem description cell.
+* **Never, ever** delete a problem cell, even for unanswered problems.
+* **Always** create a folder for an assignment, even if you choose to skip one. If you skip an assignment, submit an unaltered solutions notebook.
+
+If you inadvertently fail to follow these instructions for A02, you will get a gentle correction. Afterward, you will *lose points* for incorrect submissions.

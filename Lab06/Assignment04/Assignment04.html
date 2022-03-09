@@ -14555,7 +14555,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_problem=1.2 celltag_points=2" data-mime-type="text/markdown">
-<h3 id="Problem-1.2-(2-points):">Problem 1.2 (2 points):<a class="anchor-link" href="#Problem-1.2-(2-points):">&#182;</a></h3><blockquote><p>Test the methods by creating one instance each of <code>PoissonRateInference</code> and <code>BinomialInference</code> in your solution notebook (with input arguments of your choosing) and comparing your quadrature-based mean and standard deviation posterior summaries with analytical formulas presented in lectures.  Do the comparison by calculating the percentage difference between the quadrature-based and formula-based results and displaying the the results and percentage differences in the notebook. Display the results with an appropriate level of precision (e.g., 2 or 3 significant digits), using Python's string formatting capability.  (See <a href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Format Cookbook – mkaz.blog</a> for tips on this.)</p>
+<h3 id="Problem-1.2-(2-points):">Problem 1.2 (2 points):<a class="anchor-link" href="#Problem-1.2-(2-points):">&#182;</a></h3><blockquote><p>Test the <code>mean</code> and <code>std</code> computations by creating one instance each of <code>PoissonRateInference</code> and <code>BinomialInference</code> in your solution notebook (with input arguments of your choosing) and comparing your quadrature-based mean and standard deviation posterior summaries with analytical formulas presented in lectures.  Do the comparison by calculating the percentage difference between the quadrature-based and formula-based results and displaying the the results and percentage differences in the notebook. Display the results with an appropriate level of precision (e.g., 2 or 3 significant digits), using Python's string formatting capability.  (See <a href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Format Cookbook – mkaz.blog</a> for tips on this.)</p>
 </blockquote>
 
 </div>
@@ -14588,7 +14588,7 @@ a.anchor-link {
 <li>Use <code>scipy.stats.cauchy</code> to simulate a dataset of size <code>N</code> from a Cauchy distribution with location and scale <code>x0</code> and <code>d</code>.</li>
 <li>Create an instance of your <code>CauchyLocationInference</code> class for inferring <code>x0</code> with the simulated data.</li>
 <li>If the <code>plot</code> argument is True, plot the PDF for <code>x0</code>.</li>
-<li>If the <code>plot</code> argument is True, show the posterior mean for <code>x0</code> on the plot by computing the mean with the <code>mean()</code> method, evaluating the PDF at that value, and plotting a marker (e.g., a large dot or diamond) on the curve just plotted in step 3.</li>
+<li>If the <code>plot</code> argument is True, show the posterior mean for <code>x0</code> on the plot by using the computed <code>mean</code> data attribute, evaluating the PDF at that value, and plotting a marker (e.g., a large dot or diamond) on the curve just plotted in step 3.</li>
 <li>Return 2 (scalar) values: the value of the posterior mean, and the mean value of the samples in the simulated dataset.</li>
 </ol>
 </li>

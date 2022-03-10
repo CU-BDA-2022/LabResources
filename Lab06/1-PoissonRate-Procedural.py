@@ -6,6 +6,7 @@ This implementation uses the procedural programming paradigm.
 Created Feb 27, 2015 by Tom Loredo
 2018-03-08 Modified for Py-3, updated for BDA18
 2020-02-26 Updated for BDA20
+2022-03-02 Updated for BDA22
 """
 
 import numpy as np
@@ -115,6 +116,11 @@ def test_norm4():
 
 #-------------------------------------------------------------------------------
 # 5th case:  flat prior with (n,T) = (160, 20)
+#
+# This case fails due to an overflow --- even with simple
+# models, it's often safer to work with log probabilities
+# or log densities, than with probabilities or densities
+# directly.
 
 if False:
     n, T = 160, 20.  # data

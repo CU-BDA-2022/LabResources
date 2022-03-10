@@ -6,6 +6,7 @@ This implementation uses the object oriented programming (OOP) paradigm.
 Created Feb 27, 2015 by Tom Loredo
 2018-03-08 Modified for Py-3, updated for BDA18
 2020-02-26 Updated for BDA20
+2022-03-02 Updated for BDA22
 """
 
 import numpy as np
@@ -136,6 +137,8 @@ def test_norm4():
 
 #-------------------------------------------------------------------------------
 # 5th & 6th cases:  (n,T) = (160, 20)
+#
+# These cases again trigger an overflow RuntimeError.
 
 if False:
     n, T = 160, 20.  # data

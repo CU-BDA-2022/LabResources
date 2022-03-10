@@ -14604,7 +14604,7 @@ a.anchor-link {
 <p>The Cauchy distribution does <em>not</em> have a finite variance; as a consequence, the CLT does not hold for the sample mean when the samples are from a Cauchy distribution.  Show this numerically:</p>
 <blockquote><ul>
 <li>Run your <code>cauchy_case</code> function many times (say, 1000, but use fewer for debugging!), with <code>plot=False</code>, collecting the posterior means and the sample means in separate arrays.  Use a largish sample size, say, $N=50$ or $100$.</li>
-<li>Use matplotlib's <code>hist</code> function to plot histograms of the posterior means and sample means.  Use its <code>normed</code> parameter to plot the histograms normalized as piecewise-constant PDFs.  You can use the <code>alpha</code> (opacity) argument to make regions of overlap easier to discern.  Feel free to change the number of bins from the default value.</li>
+<li>Use matplotlib's <code>hist</code> function to plot histograms of the posterior means and sample means.  Use its <code>density</code> parameter to plot the histograms normalized as piecewise-constant PDFs.  You can use the <code>alpha</code> (opacity) argument to make regions of overlap easier to discern.  Feel free to change the number of bins from the default value.</li>
 <li>Plot the Cauchy PDF for a single observation as a solid curve on the same plot.</li>
 <li>Comment on what the plot reveals about the behavior of the sample mean.</li>
 </ul>

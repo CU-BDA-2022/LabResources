@@ -176,7 +176,7 @@ def plot_bvn(ax, bvn, rlines=False, regress=None, samples=None):
         ax.scatter(xvals, yvals, c='k', linewidths=0, alpha=.4)
 
 
-def plot_new_bvn(ax, rho, mu_x=0., mu_y=0., sig_x=1., sig_y=1., rlines=None,    
+def plot_new_bvn(ax, rho, mu_x=0., mu_y=0., sig_x=1., sig_y=1., rlines=False,    
                  regress=None, samples=None):
     """
     Plot a bivariate normal distribution specified by its five parameters, 

@@ -37,7 +37,63 @@ $ conda update conda
 ```bash
 $ conda create -n py37stan2  -c conda-forge python=3.7 numpy scipy pandas matplotlib seaborn notebook pystan=2.19.1.1 arviz 
 ```
-3. Test PyStan, as described below. (It runs in about a minute on my Macs, and in a few minutes on Windows 10 running in virtual machine.)
+3. **For Windows users only:** By default, when Python on Windows is told to compile C++ to build an external program or library, it looks for a Microsoft compiler. PyStan requires that Python instead invoke a Linux-based free compiler, which gets installed by the `conda create` command. Windows users need to modify a Python configuration file so that Python uses the `conda`-installed compiler toolchain. Follow the instructions below to do this, before moving to the test step.
+4. Test PyStan, as described below. (It runs in about a minute on my Macs, and in a few minutes on Windows 10 running in virtual machine.)
+
+
+
+## Windows configuration modification
+
+**For Windows users only:** To complete Step 3 above, do the following in a terminal (e.g., Anaconda prompt):
+
+First, activate the new environment:  
+
+```bash
+conda activate py37stan2
+```
+
+Next, find the location of the configuration file that controls Python's choice of C++ compiler. Launch Python with the `python` command. Then execute the following two lines of Python (shown here with the `>>>` Python prompt):  
+
+```python
+>>> import distutils
+>>> print(distutils.__file__)
+```
+
+Then quit the Python compiler (e.g., with `Ctrl-Z`, `Enter`), but keep the terminal window open.
+
+That Python `print`  command will print the path for Python's `distutils` package, which PyStan uses to direct compilation of Stan-produced C++ code. The path will look something like this (this is one long line of text; it probably won't look exactly like this for you):
+
+```
+C:\Anaconda\envs\py37stan2\lib\site-packages\setuptools\_distutils\__init__.py
+```
+
+Select and copy the path up to and including "`distutils`" (your path may not have an underscore before `distutils`); in my case, I copied this part:
+
+```
+C:\Anaconda\envs\py37stan2\lib\site-packages\setuptools\_distutils
+```
+
+Change your working directory to that directory by typing `cd`, a space, and then pasting that path (then type return):
+
+```bash
+cd "C:\Anaconda\envs\py37stan2\lib\site-packages\setuptools\_distutils\__init__.py"
+```
+
+Open the Windows File Explorer in that directory by launching it from the command line (note the "`.`" at the end, which denotes the current directory):
+
+```
+explorer.exe .
+```
+
+In File Explorer, locate the file named `distutils.cfg` (Explorer may hide the `.cfg` part). Open it using a text editor; Notepad or Visual Studio Code will work. Replace the contents of the file with these three lines (the last line is blank; it may not be needed):
+
+```
+[build]
+compiler=mingw32
+
+```
+
+Save the file. This completes the modification; at this point your PyStan installation should work.
 
 
 
@@ -74,7 +130,7 @@ results = model.sampling(n_jobs=1)
 # Here we print a Monte Carlo estimate of the posterior mean
 # for y; if all goes well it should be near 0.
 thetas = results.extract()['theta']
-print('Mean of posterior samples:  %.4f', thetas.mean())
+print('Mean of posterior samples:  %.4f' % thetas.mean())
 ```
 
 The output should look something like the text below (note that the compilation step will take up to a couple minutes; PyStan is composing and compiling quite a bit of code, even for this simple example). You may see lines reporting compiler *warnings* (perhaps many, many such lines). Such warnings are innocuous and may be ignored. Compiler *errors* are signs of trouble; they will typically halt the code via a Python exception.
@@ -105,7 +161,7 @@ Iteration: 2000 / 2000 [100%]  (Sampling)
 
 [There will be 4 sections like this, corresponding to 4 separate sample paths being produced.]
 
-Mean of posterior samples: 0.014537743894794548
+Mean of posterior samples:  -0.0162
 
 [You won't get that precise value for the mean, but it should be near 0.]
 ```
@@ -124,5 +180,4 @@ The standard way to get Apple's command-line tools is to install *Xcode*, Apple'
 
 - Download Xcode using the Mac App Store app.  The current version is Xcode 13.  *Note that Xcode is large and the download can be time consuming (sometimes taking hours)—don't postpone this until the last minute.* When first installing Xcode on a new machine, I often start the download at night and leave it to run overnight.
 - *Launch Xcode.*  You must launch it after installing; it installs the command-line tools after its first launch. You may then quit it.
-
 

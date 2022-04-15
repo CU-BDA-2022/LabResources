@@ -20,4 +20,4 @@ results = model.sampling(n_jobs=1)
 # Here we print a Monte Carlo estimate of the posterior mean
 # for y; if all goes well it should be near 0.
 thetas = results.extract()['theta']
-print('Mean of posterior samples:  %.4f', thetas.mean())
+print('Mean of posterior samples:  %.4f' % thetas.mean())

@@ -27,17 +27,17 @@ The following straightforward procedure has been tested on macOS 10.15 (Catalina
 
 **PyStan installation (all platforms):** Perform the following steps in order:
 
-1. Update the `conda` command-line package manager in a terminal/shell session by running the following command ("$" denotes the terminal prompt; this may take a several minutes if you haven't updated `conda` since the start of the semester):
+1. Update the `conda` command-line package manager in a terminal/shell session by running the following command ("$" denotes the terminal prompt; this may take a several minutes if you haven't updated `conda` since the start of the semester):
 
 ```bash
 $ conda update conda
 ```
-2. Create a new **`py37stan2`** environment containing Python 3.7 (*not* the current version, Python 3.9) and PyStan 2.19.1.1 with the following command (entered as a single line of text). This command adds some potentially useful additional packages to the environment, in particular, the [ArviZ](https://arviz-devs.github.io/arviz/index.html) package for plotting and analysis of  posterior sampler output. This environment contains many fewer packages than the `bda22` environment used earlier in the course, and should install more quickly. (This takes about 4 minutes on my Mac, with my home internet connection.)
+2. Create a new **`py37stan2`** environment containing Python 3.7 (*not* the current version, Python 3.9) and PyStan 2.19.1.1 with the following command (entered as a single line of text). This command adds some potentially useful additional packages to the environment, in particular, the [ArviZ](https://arviz-devs.github.io/arviz/index.html) package for plotting and analysis of  posterior sampler output. This environment contains many fewer packages than the `bda22` environment used earlier in the course, and should install more quickly. (This takes about 4 minutes on my Mac, with my home internet connection.)
 
 ```bash
 $ conda create -n py37stan2  -c conda-forge python=3.7 numpy scipy pandas matplotlib seaborn notebook pystan=2.19.1.1 arviz 
 ```
-3. **For Windows users only:** By default, when Python on Windows is told to compile C++ to build an external program or library, it looks for a Microsoft compiler. PyStan requires that Python instead invoke a Linux-based free compiler, which gets installed by the `conda create` command. Windows users need to modify a Python configuration file so that Python uses the `conda`-installed compiler toolchain. Follow the instructions below to do this, before moving to the test step.
+3. **For Windows users only:** By default, when Python on Windows is told to compile C++ to build an external program or library, it looks for a compiler that is not provided with Windows. The `conda-forge` version of PyStan requires that Python instead invoke a Linux-based free compiler, which gets installed by the `conda create` command. Windows users need to modify a Python configuration file so that Python uses the `conda`-installed compiler toolchain. Follow the instructions below to do this, before moving to the test step.
 4. Test PyStan, as described below. (It runs in about a minute on my Macs, and in a few minutes on Windows 10 running in virtual machine.)
 
 
@@ -105,7 +105,7 @@ First, activate the new Conda environment:
 $ conda activate py37stan2
 ```
 
-Test PyStan using a Python interpreter by running the following Python code. You can copy and paste it at a Python or IPython interpreter prompt, or download and run the accompanying [PyStanTest.py](PyStanTest.py) script, e.g., with `python PyStanTest.py`, or with  `ipython -i PyStanTest.py`, which uses `ipython` and leaves Python running after the test, in case you'd like to explore the results.
+Test PyStan using a Python interpreter by running the following Python code. You can copy and paste it at a Python or IPython interpreter prompt, or download and run the accompanying [PyStanTest.py](PyStanTest.py) script, e.g., with `python PyStanTest.py`, or with  `ipython -i PyStanTest.py`, which uses `ipython` and leaves Python running after the test, in case you'd like to explore the results.
 
 ```python
 import pystan
@@ -133,7 +133,7 @@ thetas = results.extract()['theta']
 print('Mean of posterior samples:  %.4f' % thetas.mean())
 ```
 
-The output should look something like the text below (note that the compilation step will take up to a couple minutes; PyStan is composing and compiling quite a bit of code, even for this simple example). You may see lines reporting compiler *warnings* (perhaps many, many such lines). Such warnings are innocuous and may be ignored. Compiler *errors* are signs of trouble; they will typically halt the code via a Python exception.
+The output should look something like the text below (note that the compilation step will take up to a couple minutes; PyStan is composing and compiling quite a bit of code, even for this simple example). You may see lines reporting compiler *warnings* (perhaps many, many such lines). Such warnings are innocuous and may be ignored. Compiler *errors* are signs of trouble; they will typically halt the code via a Python exception.
 ```
 INFO:pystan:COMPILING THE C++ CODE FOR MODEL anon_model_6fa7f15b3d85e088d23232eb587e3d58 NOW.
 
@@ -178,6 +178,6 @@ Mac users who do not have Apple's developer tools installed and who have problem
 
 The standard way to get Apple's command-line tools is to install *Xcode*, Apple's developer enviroment. That said, Xcode is large (the current version is a 12.7 GB download), and if you don't plan on developing macOS or iOS apps, you may want to install the much smaller command-line tools package by itself. However, to do that, you must have an Apple developer account (it's free). If you want to install the tools alone, you'll find the installer at [Apple Developer downloads](https://developer.apple.com/download/more/) (login required). Otherwise, install the tools by installing Xcode, as follows:
 
-- Download Xcode using the Mac App Store app.  The current version is Xcode 13.  *Note that Xcode is large and the download can be time consuming (sometimes taking hours)—don't postpone this until the last minute.* When first installing Xcode on a new machine, I often start the download at night and leave it to run overnight.
+- Download Xcode using the Mac App Store app.  The current version is Xcode 13.  *Note that Xcode is large and the download can be time consuming (sometimes taking hours)—don't postpone this until the last minute.* When first installing Xcode on a new machine, I often start the download at night and leave it to run overnight.
 - *Launch Xcode.*  You must launch it after installing; it installs the command-line tools after its first launch. You may then quit it.
 

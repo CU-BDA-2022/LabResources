@@ -13,7 +13,8 @@ A PAT is a GitHub-generated random-looking string that works as a password.
   * Generate the token. GitHub will display the token, a long, random-looking string.
 * **Copy the token, and treat it just like you'd treat an important password.** Keep it secure, and keep it secret.
   * If you use a password manager, use it to store your PAT just like you'd store any other password (use your GitHub username as the username associated with the PAT).
-  * If you don't use a password manager, consider investing time in setting one up. Cornell provides free LastPass enterprise accounts to students: [Secure Password Management | IT@Cornell](https://it.cornell.edu/password-mgmt). 
+  * If you don't use a password manager, consider investing time in setting one up. Cornell provides free LastPass enterprise accounts to students: [Secure Password Management | IT@Cornell](https://it.cornell.edu/password-mgmt).
+  * If you don't copy or lose the token, *it cannot be retrieved*. You can regenerate the token (there is a `Regenerate token` button for that); this will create a *new* token (with the specified settings) and deauthorize the old one, so if the old token is being used by an application, it will have to be replaced with the new one.
 
 
 

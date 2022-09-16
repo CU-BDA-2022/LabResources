@@ -17,7 +17,7 @@ For `git` actions that modify your assignment repo on GitHub (e.g., `git push`),
 
 ## Personal access tokens
 
-In computing, a *token* is "an object (in software or in hardware) which represents the right to perform some operation" ([Token - Wikipedia](https://en.wikipedia.org/wiki/Token)).
+In computer security, a *token* is "an object (in software or in hardware) which represents the right to perform some operation" ([Token - Wikipedia](https://en.wikipedia.org/wiki/Token)).
 
 A GitHub personal access token is essentially a kind of supplemental password associated with a GitHub user's account. 
 
@@ -27,17 +27,17 @@ An account's *main password* has the following properties:
 * If changed, it must be updated everywhere the account is accessed by password.
 
 A PAT is a machine-generated string (random-looking and thus nearly impossible to guess), generated at an account holder's request, usable like a password to provide access to account resources, but differing from a password in important respects:
-* An account may have multiple PATs associated with it, each created for a specific purpose (e.g., to use on a specific machine).
+* An account may have multiple PATs associated with it, each created for a specific purpose (e.g., to use on a specific machine, or for a specific project).
 * Each PAT may have restrictions on what account resources it can provide access to.
 * Each PAT may have an expiration date, set when it is generated.
 * The account holder may revoke a PAT at any time.
 * GitHub automatically removes personal access tokens once they've been unused for a year.
 
-Since GitHub switched to PAT-based authorization (in summer 2021), `git` commands on remote machines that access restricted resources in a user's GitHub account (e.g., `git push` back to a user's GitHub repo), and which thus ask for a username and password, should be provided the usual username, ***but be provided a PAT in place of the user's main password***. Entering the main password will cause the connection to fail. See the *Using a token on the command line* section of the PAT creation docs.
+Since GitHub switched to PAT-based authorization (in summer 2021), `git` commands on remote machines that access restricted resources in a user's GitHub account (e.g., `git push` back to a user's GitHub repo, or `git clone` and  `git pull` with a private repo), and which thus ask for a username and password, should be provided the usual username, ***but be provided a PAT in place of the user's main password***. Entering the main password will cause the connection to fail. See the *Using a token on the command line* section of the PAT creation docs cited above.
 
 *Note for Git experts who use SSH:* PATs can only be used for remote Git operations using the HTTPS protocol. If a repository uses a remote URL with the secure shell protocol (SSH), it must be changed to use HTTPS.
 
-Follow the TL;DR instructions above to generate a PAT as needed. On the command line, use it when prompted for a password (see below for tips on storing the PAT so you don't have to type it every time). If you are using a Git GUI, you can store the PAT in the GUI's credential settings. For the SourceTree GUI, you would do this in the *Accounts* pane of SourceTree's preferences window.
+Follow the TL;DR instructions above to generate a PAT as needed. On the command line, use it when prompted for a password (see below for tips on storing the PAT so you don't have to type it every time). If you are using a Git GUI, you can store the PAT in the GUI's credential settings so you don't have to enter it manually with every GitHub interaction. For the SourceTree GUI, you would do this in the *Accounts* pane of SourceTree's preferences window.
 
 
 
